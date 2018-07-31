@@ -14,12 +14,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shanewholloway/jsy-register.git"
+    "url": "git+https://github.com/jsy-lang/jsy-register.git"
   },
   "bugs": {
-    "url": "https://github.com/shanewholloway/jsy-register/issues"
+    "url": "https://github.com/jsy-lang/jsy-register/issues"
   },
-  "homepage": "https://github.com/shanewholloway/jsy-register#readme",
+  "homepage": "https://github.com/jsy-lang/jsy-register#readme",
   "main": "jsy-register.js",
   "dependencies": {
     "pirates": "^3.0.2",
@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "jsy-register": "file:.",
-    "jsy-transpile": "github:shanewholloway/jsy-transpile"
+    "jsy-transpile": "github:jsy-lang/jsy-transpile"
   },
   "peerDependencies": {
     "jsy-transpile": "*"
