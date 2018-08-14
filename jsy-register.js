@@ -1,11 +1,20 @@
 const pirates = require('pirates')
-const {jsy_scanner} = require('jsy-transpile')
+const { SourceMapGenerator } = require('source-map')
+const { jsy_transpile } = require('jsy-transpile')
 
 function jsy_hook(code, filename) {
-  const res = jsy_scanner(code, {source: filename})
-  return `${res.src_code()} //# ${res.src_map.toComment()}`
-}
+  const sourcemap = new SourceMapGenerator()
+
+  //sourcemap.setSourceContent @ code, offside_src
+  return jsy_transpile( code, {
+    addSourceMapping(arg) {
+      arg.source = filename
+      sourcemap.addMapping(arg)
+    },
+    inlineSourceMap() {
+      return sourcemap.toString()
+    } }) }
 
 require('source-map-support').install()
-pirates.addHook(jsy_hook, {exts: ['.js', '.jsy']})
+pirates.addHook(jsy_hook, {exts: ['.jsy']})
 
