@@ -1,4 +1,5 @@
 # jsy-register
+[![Build Status](https://travis-ci.org/jsy-lang/jsy-register.svg?branch=master)](https://travis-ci.org/jsy-lang/jsy-register)
 
 Register runtime require handler for Offside (indention) JSY syntax transpiler to standard JavaScript.
 
