@@ -1,8 +1,11 @@
-const pirates = require('pirates')
 const { SourceMapGenerator } = require('source-map')
-const { jsy_transpile } = require('jsy-transpile')
 
-function jsy_hook(code, filename) {
+import jsy_transpile_snapshot from 'jsy-transpile'
+
+let jsy_transpile = jsy_transpile_snapshot
+try { jsy_transpile = require('jsy-transpile') } catch (err) {}
+
+export default function jsy_pirate_hook(code, filename) {
   const sourcemap = new SourceMapGenerator()
 
   //sourcemap.setSourceContent @ code, offside_src
@@ -14,7 +17,4 @@ function jsy_hook(code, filename) {
     inlineSourceMap() {
       return sourcemap.toString()
     } }) }
-
-require('source-map-support').install()
-pirates.addHook(jsy_hook, {exts: ['.jsy']})
 
