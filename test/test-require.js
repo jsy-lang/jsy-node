@@ -1,3 +1,3 @@
-require('jsy-register')
+require('jsy-node')
 
 require('../examples/hello.jsy')
