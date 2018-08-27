@@ -23,3 +23,10 @@ require('jsy-node')
 
 require('./examples/hello.jsy')
 ```
+
+### Use with [Mocha](https://mochajs.org/)
+
+```bash
+$ mocha --require jsy-node/all some-unittest.jsy
+```
+
