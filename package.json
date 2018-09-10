@@ -1,6 +1,6 @@
 {
   "name": "jsy-node",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "Register runtime require handler for Offside (indention) JSY syntax transpiler to standard JavaScript.",
   "author": "Shane Holloway <shane.holloway@ieee.org>",
   "license": "BSD-2-Clause",
@@ -39,10 +39,10 @@
     "source-map-support": "^0.5.9"
   },
   "devDependencies": {
-    "jsy-transpile": "^0.2.5",
+    "jsy-transpile": "^0.3.3",
     "jsy-node": "file:.",
-    "rollup": "^0.65.0",
-    "rollup-plugin-node-resolve": "^3.3.0"
+    "rollup": "^0.65.2",
+    "rollup-plugin-node-resolve": "^3.4.0"
   },
   "scripts": {
     "build": "rollup --config",
