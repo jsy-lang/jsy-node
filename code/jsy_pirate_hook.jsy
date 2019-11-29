@@ -8,13 +8,21 @@ try { jsy_transpile = require('jsy-transpile') } catch (err) {}
 export default function jsy_pirate_hook(code, filename) {
   const sourcemap = new SourceMapGenerator()
 
-  //sourcemap.setSourceContent @ code, offside_src
-  return jsy_transpile( code, {
-    addSourceMapping(arg) {
-      arg.source = filename
-      sourcemap.addMapping(arg)
-    },
-    inlineSourceMap() {
-      return sourcemap.toString()
-    } }) }
+  try {
+    return jsy_transpile( code, {
+      addSourceMapping(arg) {
+        arg.source = filename
+        sourcemap.addMapping(arg)
+      },
+      inlineSourceMap() {
+        return sourcemap.toString()
+      } })
+  } catch (err) {
+    if (! (err instanceof SyntaxError)) throw err
+    const {line, column, col} = err.src_loc || {}
+    console.error(`JSY Syntax Error in "${filename}" at line ${line}:${column}`)
+    console.error(`  ${err.message}`)
+    return 'process.exit(42)'
+  }
+}
 

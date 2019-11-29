@@ -1,6 +1,8 @@
 console.log @
   'Hello JSY world!'
 
+bingo @ '
+
 module.exports = @{}
   ts: new Date()
   __filename
