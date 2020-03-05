@@ -1,4 +1,4 @@
-import rpi_resolve from "rollup-plugin-node-resolve"
+import rpi_resolve from "@rollup/plugin-node-resolve"
 
 const plugins = [rpi_resolve({modulesOnly: true})]
 const external = []
