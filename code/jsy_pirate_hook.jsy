@@ -1,21 +1,20 @@
-const { SourceMapGenerator } = require('source-map')
-
+import tiny_sourcemap from 'tiny-source-map'
 import jsy_transpile_snapshot from 'jsy-transpile'
 
 let jsy_transpile = jsy_transpile_snapshot
 try { jsy_transpile = require('jsy-transpile') } catch (err) {}
 
 export default function jsy_pirate_hook(code, filename) {
-  const sourcemap = new SourceMapGenerator()
+  const src_map = tiny_sourcemap()
 
   try {
     return jsy_transpile( code, {
       addSourceMapping(arg) {
         arg.source = filename
-        sourcemap.addMapping(arg)
+        src_map.addMapping(arg)
       },
       inlineSourceMap() {
-        return sourcemap.toString()
+        return src_map.toString()
       } })
   } catch (err) {
     if (! (err instanceof SyntaxError)) throw err
