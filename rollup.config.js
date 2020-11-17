@@ -9,8 +9,8 @@ export default [
   { input: './code/jsy_pirate_hook.jsy',
     external, plugins: [rpi_resolve({modulesOnly: true})],
     output: [
-      { file: 'cjs/jsy_pirate_hook.js', format: 'cjs'},
-      { file: 'esm/jsy_pirate_hook.js', format: 'esm'},
+      { file: 'cjs/jsy_pirate_hook.cjs', format: 'cjs'},
+      { file: 'esm/jsy_pirate_hook.mjs', format: 'esm'},
     ]},
 
   { input: './code/all.js', external, plugins,
