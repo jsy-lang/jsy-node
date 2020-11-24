@@ -47,6 +47,6 @@
     "watch": "rollup --config --watch",
     "prepublish": "npm -s run test",
     "pretest": "npm -s run build",
-    "test": "node ./test/test-require.js && node -r jsy-node ./examples/hello.jsy"
+    "test": "cd test; npm -s run test"
   }
 }

@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "version": "0.0.0",
+  "dependencies": {
+    "jsy-node": "file:.."
+  },
+  "scripts": {
+    "pretest": "test -d ./node_modules || npm -s install",
+    "test": "node ./test-require.js && node -r jsy-node ../examples/hello.jsy"
+  }
+}
