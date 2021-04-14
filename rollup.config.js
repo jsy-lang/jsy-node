@@ -6,10 +6,10 @@ const external = [ 'child_process', 'path', 'module', 'fs']
 const plugins = [ rpi_json(), rpi_resolve(), rpi_commonjs() ]
 
 export default [
-  { input: './code/jsy_pirate_hook.jsy',
+  { input: './code/jsy_pirate_hook.js',
     external, plugins: [rpi_resolve({modulesOnly: true})],
     output: [
-      { file: 'cjs/jsy_pirate_hook.cjs', format: 'cjs'},
+      { file: 'cjs/jsy_pirate_hook.cjs', format: 'cjs', exports: 'default'},
       { file: 'esm/jsy_pirate_hook.mjs', format: 'esm'},
     ]},
 
