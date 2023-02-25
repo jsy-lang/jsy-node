@@ -1,5 +1,6 @@
 # jsy-node
-[![Build Status](https://travis-ci.org/jsy-lang/jsy-node.svg?branch=master)](https://travis-ci.org/jsy-lang/jsy-node)
+**Deprecated** -- see [jjsy-lang/jsy-nodejs](https://github.com/jsy-lang/jsy-nodejs/) that uses NodeJS experimental loader mechanism.
+
 
 Register runtime require handler for Offside (indention) JSY syntax transpiler to standard JavaScript.
 
